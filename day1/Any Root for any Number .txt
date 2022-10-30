@@ -1,0 +1,59 @@
+//Ahmed Mustafa Abdellnaby
+
+#include <string.h>
+#include <stdio.h>
+#include <math.h>
+
+int Root(int number , int Req_Root);
+
+
+int main (void)
+
+{
+	int Res=0 , Root_Number = 0, number = 0;
+
+	printf("enter the Root\n");
+		fflush(stdout);
+
+		scanf("%d",&Root_Number);
+
+
+		printf("\n");
+
+
+		printf("enter the number\n");
+		fflush(stdout);
+		scanf("%d",&number);
+
+
+
+	Res = Root(number , Root_Number);
+
+	printf("res = %d",Res);
+
+	return 0;
+}
+
+int Root(int number , int Req_Root)
+{
+	int result=1, x =1 ,test = 1 ;
+
+	while(test == 1)
+	{
+
+		  for(int j=0; j< Req_Root ; j++)
+		  {
+				result = result * x;
+		  }
+		  if (result  == number)
+		  	{
+		  		test = 0;
+		  		return x;
+		  	}
+		  result = 1;
+		  x++;
+
+	}
+	return x;
+}
+
